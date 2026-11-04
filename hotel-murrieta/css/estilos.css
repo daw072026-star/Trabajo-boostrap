@@ -1,0 +1,585 @@
+:root {
+  --crema: #faf5ec;
+  --blanco: #ffffff;
+  --vino: #722f37;
+  --vino-oscuro: #5a252c;
+  --oro: #c9a45c;
+  --carbon: #2d2627;
+  --texto-suave: #6e6560;
+  --borde: #e0d6c4;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--carbon);
+  background-color: #e8e2d8;
+}
+
+.pagina {
+  position: relative;
+  max-width: 402px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: var(--crema);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.12);
+}
+
+.container {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+h1, h2, .logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.texto-suave {
+  color: var(--texto-suave);
+}
+
+.texto-pequeno {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.g-12 {
+  --bs-gutter-x: 12px;
+  --bs-gutter-y: 12px;
+}
+
+.g-20 {
+  --bs-gutter-x: 20px;
+  --bs-gutter-y: 20px;
+}
+
+.barra {
+  padding: 12px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.barra .container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.logo,
+.navbar-brand.logo {
+  margin: 0;
+  font-size: 22px;
+  line-height: 28px;
+  color: var(--vino);
+}
+
+.navbar-brand.logo:hover {
+  color: var(--vino);
+}
+
+.navbar-toggler {
+  padding: 0;
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23722f37' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-collapse {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: var(--vino-oscuro);
+}
+
+.navbar-collapse .navbar-nav {
+  padding: 0 24px 24px;
+}
+
+.navbar-collapse .navbar-nav::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-bottom: 8px;
+  background-color: var(--oro);
+  border-radius: 2px;
+}
+
+.navbar-collapse .nav-link,
+.navbar-collapse .nav-link:hover {
+  padding: 8px 0;
+  color: var(--blanco);
+  font-weight: 400;
+}
+
+.navbar-collapse .nav-link.active {
+  color: var(--oro);
+}
+
+.hero,
+.hero-pagina,
+.hero-reserva {
+  background: linear-gradient(to right, #471c23, #8e4553);
+  color: var(--blanco);
+}
+
+.hero {
+  padding: 40px 0;
+}
+
+.hero-pagina {
+  padding: 40px 0;
+}
+
+.hero-reserva {
+  padding: 32px 0;
+}
+
+.hero p,
+.hero-pagina p,
+.hero-reserva p {
+  color: var(--crema);
+}
+
+.hero .container > :last-child,
+.hero-pagina .container > :last-child,
+.hero-reserva .container > :last-child {
+  margin-bottom: 0;
+}
+
+.breadcrumb-hero {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.breadcrumb-hero a {
+  color: var(--crema);
+  text-decoration: none;
+}
+
+.hero-pagina .breadcrumb-hero,
+.hero-pagina h1 {
+  margin-bottom: 8px;
+}
+
+.hero-reserva .breadcrumb-hero,
+.hero-reserva h1,
+.hero-reserva p {
+  margin-bottom: 16px;
+}
+
+.detalle {
+  width: 40px;
+  height: 2px;
+  margin-bottom: 16px;
+  background-color: var(--oro);
+  border-radius: 2px;
+}
+
+.guia-reserva {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.num-paso {
+  margin-right: 4px;
+  color: var(--oro);
+  font-weight: 600;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.btn-oro {
+  border: none;
+  background-color: var(--oro);
+  color: var(--carbon);
+}
+
+.btn-oro:hover {
+  background-color: #b8934d;
+  color: var(--carbon);
+}
+
+.btn-vino {
+  border: none;
+  background-color: var(--vino);
+  color: var(--blanco);
+}
+
+.btn-vino:hover {
+  background-color: var(--vino-oscuro);
+  color: var(--blanco);
+}
+
+.btn-contorno {
+  border: 2px solid var(--vino);
+  background-color: transparent;
+  color: var(--vino);
+}
+
+.btn-contorno:hover {
+  background-color: var(--vino);
+  color: var(--blanco);
+}
+
+.img-carrusel {
+  height: 240px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.carousel-indicators {
+  position: static;
+  margin: 20px 0 0;
+}
+
+.carousel-indicators [data-bs-target] {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--vino);
+  opacity: 0.3;
+}
+
+.carousel-indicators .active {
+  width: 24px;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.img-oferta {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.img-oferta-1 {
+  aspect-ratio: 3 / 2;
+  margin-bottom: 20px;
+}
+
+.img-oferta-2 {
+  aspect-ratio: 597 / 335;
+}
+
+.galeria {
+  margin-bottom: 20px;
+}
+
+.img-hotel {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.img-fachada {
+  height: 180px;
+}
+
+.img-secundaria {
+  height: 120px;
+}
+
+.pie {
+  padding: 40px 0 24px;
+  background-color: var(--vino);
+  color: var(--blanco);
+}
+
+.pie .logo {
+  margin-bottom: 24px;
+  color: var(--blanco);
+}
+
+.pie address {
+  margin-bottom: 24px;
+  color: var(--crema);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.enlaces-pie {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.enlaces-pie a {
+  color: var(--blanco);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.enlaces-pie a:hover {
+  text-decoration: underline;
+}
+
+.form-label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  padding: 12px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  background-color: var(--blanco);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--vino);
+  box-shadow: 0 0 0 0.2rem rgba(114, 47, 55, 0.2);
+}
+
+.form-check-input:checked {
+  border-color: var(--vino);
+  background-color: var(--vino);
+}
+
+.obligatorio {
+  color: var(--vino);
+}
+
+.tarjeta-filtros,
+.tarjeta-estancia {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--blanco);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.filtros {
+  padding: 24px 0;
+}
+
+.listado {
+  padding: 16px 0 48px;
+}
+
+.tarjeta-habitacion {
+  overflow: hidden;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-habitacion .card-img-top {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.tarjeta-habitacion .card-body {
+  padding: 20px;
+}
+
+.tarjeta-habitacion h2 {
+  margin-bottom: 8px;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.tarjeta-habitacion p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.caracteristicas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--texto-suave);
+}
+
+.caracteristicas li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: var(--oro);
+  vertical-align: middle;
+}
+
+.tarjeta-habitacion .precio {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--vino);
+}
+
+.ayuda {
+  padding: 40px 0;
+  background-color: var(--blanco);
+}
+
+.ayuda h2,
+.ayuda p {
+  margin-bottom: 16px;
+}
+
+.enlace-vino {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--vino);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.enlace-vino:hover {
+  text-decoration: underline;
+}
+
+.seccion-estancia {
+  padding: 24px 0;
+}
+
+.seccion-datos {
+  padding: 32px 0;
+}
+
+.seccion-boton {
+  padding: 24px 0;
+}
+
+.titulo-fila {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.paso {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--vino);
+  color: var(--blanco);
+  font-weight: 600;
+}
+
+.titulo-seccion {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--vino);
+}
+
+.tarjeta-estancia > * {
+  margin-bottom: 20px;
+}
+
+.tarjeta-estancia > :last-child {
+  margin-bottom: 0;
+}
+
+.duracion {
+  color: var(--vino);
+}
+
+.fila-huesped {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fila-huesped p {
+  margin: 0;
+}
+
+.etiqueta-huesped {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.btn-contador {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--vino);
+  border-radius: 6px;
+  background-color: var(--blanco);
+  color: var(--vino);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.btn-contador:hover {
+  background-color: var(--vino);
+  color: var(--blanco);
+}
+
+.contador input {
+  width: 16px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-weight: 600;
+  color: var(--carbon);
+}
+
+.contador input:focus {
+  outline: none;
+}
+
+.campo {
+  margin-bottom: 20px;
+}
