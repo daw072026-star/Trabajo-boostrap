@@ -583,3 +583,346 @@ p {
 .campo {
   margin-bottom: 20px;
 }
+
+
+/* ==========================================================================
+   RESPONSIVE
+   Diseño base = móvil (402px). Todo lo de abajo se añade con min-width
+   (mobile-first) sin alterar las reglas anteriores.
+   Breakpoints: 403px (móvil grande) · 768px (tablet) · 992px (escritorio) · 1200px (escritorio grande)
+   ========================================================================== */
+
+/* ---------- Móviles muy estrechos (≤ 359px) ---------- */
+@media (max-width: 359.98px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .titulo-seccion {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .tarjeta-filtros,
+  .tarjeta-estancia {
+    padding: 16px;
+  }
+}
+
+/* Evita que los input date desborden su columna en iOS/Safari */
+input[type="date"] {
+  min-width: 0;
+}
+
+/* ---------- Móvil grande (≥ 403px): la página deja de ser una columna fija ---------- */
+@media (min-width: 403px) {
+  .pagina {
+    max-width: none;
+    box-shadow: none;
+  }
+}
+
+/* ---------- Tablet (≥ 768px) ---------- */
+@media (min-width: 768px) {
+  /* Tipografía */
+  h1 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .titulo-seccion {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  /* Contenedor */
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .barra .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  /* --- Barra de navegación: menú en línea, sin hamburguesa --- */
+  .navbar-toggler {
+    display: none;
+  }
+
+  .barra .navbar-collapse {
+    position: static;
+    display: block !important;
+    flex-basis: auto;
+    flex-grow: 0;
+    width: auto;
+    background-color: transparent;
+  }
+
+  .navbar-collapse .navbar-nav {
+    flex-direction: row;
+    gap: 4px 28px;
+    padding: 0;
+  }
+
+  .navbar-collapse .navbar-nav::before {
+    display: none;
+  }
+
+  .navbar-collapse .nav-link,
+  .navbar-collapse .nav-link:hover {
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    color: var(--carbon);
+  }
+
+  .navbar-collapse .nav-link:hover {
+    color: var(--vino);
+  }
+
+  .navbar-collapse .nav-link.active {
+    border-bottom-color: var(--oro);
+    color: var(--vino);
+    font-weight: 600;
+  }
+
+  /* --- Heros --- */
+  .hero {
+    padding: 72px 0;
+  }
+
+  .hero-pagina {
+    padding: 56px 0;
+  }
+
+  .hero-reserva {
+    padding: 48px 0;
+  }
+
+  .hero p,
+  .hero-pagina p,
+  .hero-reserva p {
+    max-width: 560px;
+  }
+
+  .hero .d-grid {
+    grid-template-columns: max-content;
+  }
+
+  /* --- Botones de ancho completo pasan a ancho automático --- */
+  .ayuda .d-grid,
+  main > section.bg-white .d-grid {
+    grid-template-columns: max-content;
+  }
+
+  /* --- Inicio: carrusel --- */
+  .img-carrusel {
+    height: 360px;
+  }
+
+  /* --- Inicio: ofertas en dos columnas --- */
+  #ofertas .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+  }
+
+  #ofertas .container > h2,
+  #ofertas .container > p {
+    grid-column: 1 / -1;
+  }
+
+  #ofertas .img-oferta {
+    height: 100%;
+    aspect-ratio: 3 / 2;
+    margin-bottom: 0;
+  }
+
+  /* --- Inicio: sobre el hotel --- */
+  main > section.bg-white .container > p {
+    max-width: 640px;
+  }
+
+  .galeria .col-12 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
+  .galeria .col-6 {
+    width: 25%;
+  }
+
+  .img-fachada,
+  .img-secundaria {
+    height: 220px;
+  }
+
+  /* --- Habitaciones: filtros en una sola fila --- */
+  .tarjeta-filtros {
+    padding: 24px;
+  }
+
+  .tarjeta-filtros .row {
+    flex-wrap: nowrap;
+    align-items: flex-end;
+  }
+
+  .tarjeta-filtros .row > * {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+  }
+
+  .tarjeta-filtros .row > .pt-2 {
+    padding-top: 0 !important;
+  }
+
+  /* --- Habitaciones: rejilla de 2 columnas --- */
+  .listado {
+    padding: 24px 0 64px;
+  }
+
+  .listado .row > .col-12 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
+  .tarjeta-habitacion {
+    height: 100%;
+  }
+
+  .tarjeta-habitacion .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tarjeta-habitacion .card-body .d-grid {
+    margin-top: auto;
+  }
+
+  /* --- Ayuda --- */
+  .ayuda {
+    padding: 56px 0;
+  }
+
+  .ayuda p {
+    max-width: 560px;
+  }
+
+  /* --- Reservas: formulario alineado con el resto y datos en dos columnas --- */
+  .tarjeta-estancia {
+    max-width: 760px;
+    padding: 28px;
+  }
+
+  .seccion-datos .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 368px));
+    column-gap: 24px;
+  }
+
+  .seccion-datos .container > :not(.campo) {
+    grid-column: 1 / -1;
+    max-width: 760px;
+  }
+
+  .seccion-datos .container > .campo:has(textarea) {
+    grid-column: 1 / -1;
+    max-width: 760px;
+  }
+
+  .seccion-boton .container.d-grid {
+    grid-template-columns: max-content;
+  }
+
+  /* --- Pie en una sola fila --- */
+  .pie {
+    padding: 48px 0 40px;
+  }
+
+  .pie .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px 48px;
+  }
+
+  .pie .logo,
+  .pie address {
+    margin-bottom: 0;
+  }
+}
+
+/* ---------- Escritorio (≥ 992px) ---------- */
+@media (min-width: 992px) {
+  h1 {
+    font-size: 52px;
+    line-height: 60px;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .hero {
+    padding: 96px 0;
+  }
+
+  .hero-pagina {
+    padding: 64px 0;
+  }
+
+  .hero-reserva {
+    padding: 56px 0;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .img-carrusel {
+    height: 460px;
+  }
+
+  .img-fachada,
+  .img-secundaria {
+    height: 260px;
+  }
+
+  /* Rejilla de habitaciones: 3 columnas */
+  .listado .row > .col-12 {
+    width: 33.33333333%;
+  }
+}
+
+/* ---------- Escritorio grande (≥ 1200px) ---------- */
+@media (min-width: 1200px) {
+  .img-carrusel {
+    height: 520px;
+  }
+
+  .img-fachada,
+  .img-secundaria {
+    height: 300px;
+  }
+}
