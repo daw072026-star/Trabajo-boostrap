@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reservas | Hotel Murrieta</title>
+  <meta name="description" content="Reserva tu estancia en el Hotel Murrieta de Logroño: elige fechas, habitación y envía tus datos.">
+  <meta name="theme-color" content="#722f37">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -41,7 +44,7 @@
   </header>
 
   <main>
-    <form action="#" method="post">
+    <form id="formReserva" action="reservas.html" method="get">
 
       <section class="seccion-estancia">
         <div class="container">
@@ -65,8 +68,9 @@
 
             <p class="duracion texto-pequeno">
               <span aria-hidden="true">☾</span>
-              <span id="noches">2 noches</span> · estancia de ejemplo
+              <span id="noches">2 noches</span>
             </p>
+            <p id="errorFechas" class="aviso-error texto-pequeno" role="alert" hidden></p>
 
             <div class="fila-huesped">
               <div>
@@ -95,17 +99,57 @@
             <div>
               <label for="habitaciones" class="form-label">Habitaciones</label>
               <select id="habitaciones" name="habitaciones" class="form-select">
-                <option selected>1 habitación</option>
-                <option>2 habitaciones</option>
-                <option>3 habitaciones</option>
-                <option>4 habitaciones</option>
+                <option value="1" selected>1 habitación</option>
+                <option value="2">2 habitaciones</option>
+                <option value="3">3 habitaciones</option>
+                <option value="4">4 habitaciones</option>
               </select>
             </div>
 
             <div class="d-grid">
-              <button type="button" class="btn btn-vino">Buscar disponibilidad</button>
+              <button type="button" id="btnDisponibilidad" class="btn btn-vino">Buscar disponibilidad</button>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="seccion-habitacion" id="habitacion">
+        <div class="container">
+          <div class="titulo-fila">
+            <span class="paso">2</span>
+            <h2 class="titulo-seccion">Tu habitación</h2>
+          </div>
+          <p class="texto-suave">Elige el tipo de habitación que prefieres.</p>
+
+          <div class="opciones-habitacion" role="radiogroup" aria-label="Tipo de habitación">
+            <label class="opcion-habitacion">
+              <input class="form-check-input" type="radio" name="tipoHabitacion" value="individual" required>
+              <span class="opcion-texto">
+                <span class="opcion-nombre">Habitación Individual</span>
+                <span class="texto-suave texto-pequeno">16 m² · 1 huésped</span>
+              </span>
+              <span class="opcion-precio">69 € <small>/ noche</small></span>
+            </label>
+            <label class="opcion-habitacion">
+              <input class="form-check-input" type="radio" name="tipoHabitacion" value="estandar" required>
+              <span class="opcion-texto">
+                <span class="opcion-nombre">Doble Estándar</span>
+                <span class="texto-suave texto-pequeno">20 m² · 2 huéspedes</span>
+              </span>
+              <span class="opcion-precio">89 € <small>/ noche</small></span>
+            </label>
+            <label class="opcion-habitacion">
+              <input class="form-check-input" type="radio" name="tipoHabitacion" value="superior" required>
+              <span class="opcion-texto">
+                <span class="opcion-nombre">Doble Superior</span>
+                <span class="texto-suave texto-pequeno">28 m² · 2-3 huéspedes</span>
+              </span>
+              <span class="opcion-precio">119 € <small>/ noche</small></span>
+            </label>
+          </div>
+
+          <p id="resumen" class="resumen-reserva texto-pequeno" aria-live="polite">Elige una habitación para ver el total estimado.</p>
+          <p class="texto-suave texto-pequeno enlace-ver">¿Quieres ver los detalles? <a href="habitaciones.html" class="enlace-vino">Ver todas las habitaciones →</a></p>
         </div>
       </section>
 
@@ -120,22 +164,22 @@
 
           <div class="campo">
             <label for="nombre" class="form-label">Nombre <span class="obligatorio">*</span></label>
-            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre" required>
+            <input type="text" id="nombre" name="nombre" class="form-control" autocomplete="given-name" placeholder="Tu nombre" required>
           </div>
 
           <div class="campo">
             <label for="apellidos" class="form-label">Apellidos <span class="obligatorio">*</span></label>
-            <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Tus apellidos" required>
+            <input type="text" id="apellidos" name="apellidos" class="form-control" autocomplete="family-name" placeholder="Tus apellidos" required>
           </div>
 
           <div class="campo">
             <label for="email" class="form-label">Email <span class="obligatorio">*</span></label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Tu correo electrónico" required>
+            <input type="email" id="email" name="email" class="form-control" autocomplete="email" placeholder="Tu correo electrónico" required>
           </div>
 
           <div class="campo">
             <label for="telefono" class="form-label">Teléfono <span class="obligatorio">*</span></label>
-            <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Prefijo y número de contacto" required>
+            <input type="tel" id="telefono" name="telefono" class="form-control" autocomplete="tel" placeholder="Prefijo y número de contacto" required>
           </div>
 
           <div class="campo">
@@ -160,6 +204,22 @@
 
     </form>
 
+    <section class="seccion-confirmacion" id="confirmacion" hidden>
+      <div class="container">
+        <div class="tarjeta-confirmacion" id="tarjetaConfirmacion" role="status" tabindex="-1">
+          <p class="icono-ok" aria-hidden="true">✓</p>
+          <h2 class="titulo-seccion">¡Solicitud de reserva enviada!</h2>
+          <p id="textoConfirmacion" class="texto-suave"></p>
+          <ul id="listaConfirmacion" class="lista-confirmacion"></ul>
+          <p class="texto-suave texto-pequeno">Web de demostración: los datos no se envían a ningún servidor.</p>
+          <div class="d-grid gap-2">
+            <a href="index.html" class="btn btn-vino">Volver al inicio</a>
+            <button type="button" id="btnNuevaReserva" class="btn btn-contorno">Hacer otra reserva</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="ayuda">
       <div class="container">
         <h2>¿Te ayudamos a preparar tu estancia?</h2>
@@ -177,54 +237,20 @@
       <p class="logo">Hotel Murrieta</p>
       <address>
         Logroño, La Rioja<br>
-        Tel. 941 00 00 00<br>
-        info@hotelmurrieta.example
+        Tel. <a href="tel:+34941000000">941 00 00 00</a><br>
+        <a href="mailto:info@hotelmurrieta.example">info@hotelmurrieta.example</a>
       </address>
       <p class="enlaces-pie">
         <a href="index.html">Inicio</a> ·
         <a href="habitaciones.html">Habitaciones</a> ·
         <a href="index.html#ofertas">Ofertas</a> ·
+        <a href="reservas.html">Reservas</a> ·
         <a href="#contacto">Contacto</a>
       </p>
     </div>
   </footer>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const contadores = document.querySelectorAll('.contador');
-
-    contadores.forEach(function (contador) {
-      const minimo = Number(contador.dataset.min);
-      const maximo = Number(contador.dataset.max);
-      const campo = contador.querySelector('input');
-
-      contador.querySelectorAll('button').forEach(function (boton) {
-        boton.addEventListener('click', function () {
-          let valor = Number(campo.value) + Number(boton.dataset.cambio);
-          if (valor < minimo) valor = minimo;
-          if (valor > maximo) valor = maximo;
-          campo.value = valor;
-        });
-      });
-    });
-
-    const entrada = document.getElementById('entrada');
-    const salida = document.getElementById('salida');
-    const textoNoches = document.getElementById('noches');
-
-    function calcularNoches() {
-      const milisegundosPorDia = 1000 * 60 * 60 * 24;
-      const dias = (new Date(salida.value) - new Date(entrada.value)) / milisegundosPorDia;
-
-      if (dias > 0) {
-        textoNoches.textContent = dias + (dias === 1 ? ' noche' : ' noches');
-      } else {
-        textoNoches.textContent = 'Revisa las fechas';
-      }
-    }
-
-    entrada.addEventListener('change', calcularNoches);
-    salida.addEventListener('change', calcularNoches);
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

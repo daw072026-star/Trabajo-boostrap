@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Habitaciones | Hotel Murrieta</title>
+  <meta name="description" content="Habitaciones del Hotel Murrieta en Logroño: Individual, Doble Estándar y Doble Superior. Consulta características y precios.">
+  <meta name="theme-color" content="#722f37">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -38,31 +41,31 @@
     <section class="filtros">
       <div class="container">
         <div class="tarjeta-filtros">
-          <form>
+          <form id="formFiltros" action="habitaciones.html" method="get">
             <div class="row g-12">
               <div class="col-6">
                 <label for="tipo" class="form-label">Tipo</label>
-                <select id="tipo" class="form-select">
-                  <option selected>Todas</option>
-                  <option>Individual</option>
-                  <option>Doble Estándar</option>
-                  <option>Doble Superior</option>
+                <select id="tipo" name="tipo" class="form-select">
+                  <option value="todas" selected>Todas</option>
+                  <option value="individual">Individual</option>
+                  <option value="estandar">Doble Estándar</option>
+                  <option value="superior">Doble Superior</option>
                 </select>
               </div>
               <div class="col-6">
                 <label for="huespedes" class="form-label">Huéspedes</label>
-                <select id="huespedes" class="form-select">
-                  <option selected>1-2</option>
-                  <option>2-3</option>
+                <select id="huespedes" name="huespedes" class="form-select">
+                  <option value="1-2" selected>1-2</option>
+                  <option value="2-3">2-3</option>
                 </select>
               </div>
               <div class="col-12">
                 <label for="precio" class="form-label">Precio máximo</label>
-                <select id="precio" class="form-select">
-                  <option selected>Cualquiera</option>
-                  <option>70 €</option>
-                  <option>90 €</option>
-                  <option>120 €</option>
+                <select id="precio" name="precio" class="form-select">
+                  <option value="cualquiera" selected>Cualquiera</option>
+                  <option value="70">70 €</option>
+                  <option value="90">90 €</option>
+                  <option value="120">120 €</option>
                 </select>
               </div>
               <div class="col-12 d-grid pt-2">
@@ -77,7 +80,7 @@
     <section class="listado">
       <div class="container">
         <div class="row g-20">
-        <div class="col-12">
+        <div class="col-12" data-habitacion="individual" data-min="1" data-max="1" data-precio="69">
           <article class="card tarjeta-habitacion">
             <img src="img/individual.jpg" class="card-img-top" alt="Habitación Individual">
             <div class="card-body">
@@ -93,12 +96,12 @@
               </ul>
               <p class="precio">Desde 69 € / noche</p>
               <div class="d-grid">
-                <a href="reservas.html" class="btn btn-vino">Reservar</a>
+                <a href="reservas.html?habitacion=individual" class="btn btn-vino">Reservar</a>
               </div>
             </div>
           </article>
         </div>
-        <div class="col-12">
+        <div class="col-12" data-habitacion="estandar" data-min="2" data-max="2" data-precio="89">
           <article class="card tarjeta-habitacion">
             <img src="img/estandar.jpg" class="card-img-top" alt="Doble Estándar">
             <div class="card-body">
@@ -114,12 +117,12 @@
               </ul>
               <p class="precio">Desde 89 € / noche</p>
               <div class="d-grid">
-                <a href="reservas.html" class="btn btn-vino">Reservar</a>
+                <a href="reservas.html?habitacion=estandar" class="btn btn-vino">Reservar</a>
               </div>
             </div>
           </article>
         </div>
-        <div class="col-12">
+        <div class="col-12" data-habitacion="superior" data-min="2" data-max="3" data-precio="119">
           <article class="card tarjeta-habitacion">
             <img src="img/superior.jpg" class="card-img-top" alt="Doble Superior">
             <div class="card-body">
@@ -135,12 +138,13 @@
               </ul>
               <p class="precio">Desde 119 € / noche</p>
               <div class="d-grid">
-                <a href="reservas.html" class="btn btn-vino">Reservar</a>
+                <a href="reservas.html?habitacion=superior" class="btn btn-vino">Reservar</a>
               </div>
             </div>
           </article>
         </div>
         </div>
+        <p id="sinResultados" class="sin-resultados texto-suave" role="status" hidden>No hay habitaciones que cumplan esos filtros. Prueba con otros criterios.</p>
       </div>
     </section>
 
@@ -160,18 +164,20 @@
       <p class="logo">Hotel Murrieta</p>
       <address>
         Logroño, La Rioja<br>
-        Tel. 941 00 00 00<br>
-        info@hotelmurrieta.example
+        Tel. <a href="tel:+34941000000">941 00 00 00</a><br>
+        <a href="mailto:info@hotelmurrieta.example">info@hotelmurrieta.example</a>
       </address>
       <p class="enlaces-pie">
         <a href="index.html">Inicio</a> ·
         <a href="habitaciones.html">Habitaciones</a> ·
         <a href="index.html#ofertas">Ofertas</a> ·
+        <a href="reservas.html">Reservas</a> ·
         <a href="#contacto">Contacto</a>
       </p>
     </div>
   </footer>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

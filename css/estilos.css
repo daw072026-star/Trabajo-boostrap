@@ -586,6 +586,176 @@ p {
 
 
 /* ==========================================================================
+   AÑADIDOS: enlaces, filtros, paso 2 de reservas y confirmación
+   ========================================================================== */
+
+.pie address a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pie address a:hover {
+  text-decoration: underline;
+}
+
+/* Las imágenes de ofertas son enlaces sin alterar su maquetación */
+.enlace-oferta {
+  display: contents;
+}
+
+.enlace-oferta:focus-visible .img-oferta {
+  outline: 3px solid var(--oro);
+  outline-offset: 3px;
+}
+
+.sin-resultados {
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+.form-check-input:focus {
+  border-color: var(--vino);
+  box-shadow: 0 0 0 0.2rem rgba(114, 47, 55, 0.2);
+}
+
+.aviso-error {
+  color: #b3261e;
+  font-weight: 600;
+}
+
+.seccion-habitacion {
+  padding: 8px 0 24px;
+}
+
+.opciones-habitacion {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.opcion-habitacion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background-color: var(--blanco);
+  cursor: pointer;
+}
+
+.opcion-habitacion:hover,
+.opcion-habitacion:has(input:checked) {
+  border-color: var(--vino);
+}
+
+.opcion-habitacion:has(input:checked) {
+  box-shadow: 0 0 0 1px var(--vino);
+}
+
+.opcion-habitacion .form-check-input {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.opcion-texto {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.opcion-nombre {
+  font-weight: 600;
+}
+
+.opcion-precio {
+  color: var(--vino);
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.opcion-precio small {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.resumen-reserva {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--blanco);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  color: var(--vino);
+  font-weight: 600;
+}
+
+.enlace-ver {
+  margin-bottom: 0;
+}
+
+.enlace-ver .enlace-vino {
+  margin-top: 0;
+}
+
+.seccion-confirmacion {
+  padding: 32px 0;
+}
+
+.tarjeta-confirmacion {
+  padding: 24px;
+  border-radius: 12px;
+  background-color: var(--blanco);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-confirmacion:focus {
+  outline: none;
+}
+
+.icono-ok {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background-color: var(--vino);
+  color: var(--oro);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.lista-confirmacion {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-confirmacion li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--borde);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.lista-confirmacion li span:first-child {
+  color: var(--texto-suave);
+}
+
+.lista-confirmacion li span:last-child {
+  font-weight: 600;
+  text-align: right;
+}
+
+
+/* ==========================================================================
    RESPONSIVE
    Diseño base = móvil (402px). Todo lo de abajo se añade con min-width
    (mobile-first) sin alterar las reglas anteriores.
@@ -852,6 +1022,20 @@ input[type="date"] {
     grid-template-columns: max-content;
   }
 
+  .opciones-habitacion,
+  .resumen-reserva,
+  .tarjeta-confirmacion {
+    max-width: 760px;
+  }
+
+  .tarjeta-confirmacion {
+    padding: 28px;
+  }
+
+  .tarjeta-confirmacion .d-grid {
+    grid-template-columns: max-content max-content;
+  }
+
   /* --- Pie en una sola fila --- */
   .pie {
     padding: 48px 0 40px;
@@ -909,13 +1093,12 @@ input[type="date"] {
     height: 260px;
   }
 
-  /* Rejilla de habitaciones: 3 columnas */
   .listado .row > .col-12 {
     width: 33.33333333%;
   }
 }
 
-/* ---------- Escritorio grande (≥ 1200px) ---------- */
+
 @media (min-width: 1200px) {
   .img-carrusel {
     height: 520px;
