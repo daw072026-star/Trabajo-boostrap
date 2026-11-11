@@ -8,7 +8,6 @@
   --texto-suave: #6e6560;
   --borde: #e0d6c4;
 }
-
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -16,7 +15,6 @@ body {
   color: var(--carbon);
   background-color: #e8e2d8;
 }
-
 .pagina {
   position: relative;
   max-width: 402px;
@@ -25,87 +23,31 @@ body {
   background-color: var(--crema);
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.12);
 }
-
-.container {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-h1, h2, .logo {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 32px;
-  line-height: 40px;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 28px;
-  line-height: 36px;
-  margin-bottom: 20px;
-}
-
-p {
-  margin-bottom: 20px;
-}
-
-.texto-suave {
-  color: var(--texto-suave);
-}
-
-.texto-pequeno {
+.container { padding-left: 24px; padding-right: 24px; }
+h1, h2, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
+h1 { font-size: 32px; line-height: 40px; margin-bottom: 20px; }
+h2 { font-size: 28px; line-height: 36px; margin-bottom: 20px; }
+p { margin-bottom: 20px; }
+.texto-suave { color: var(--texto-suave); }
+.texto-pequeno, .breadcrumb-hero, .guia-reserva, .enlaces-pie {
   font-size: 14px;
   line-height: 20px;
 }
-
-.g-12 {
-  --bs-gutter-x: 12px;
-  --bs-gutter-y: 12px;
-}
-
-.g-20 {
-  --bs-gutter-x: 20px;
-  --bs-gutter-y: 20px;
-}
-
-.barra {
-  padding: 12px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-.barra .container {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.logo,
-.navbar-brand.logo {
+.g-12 { --bs-gutter-x: 12px; --bs-gutter-y: 12px; }
+.g-20 { --bs-gutter-x: 20px; --bs-gutter-y: 20px; }
+.barra { padding: 12px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); }
+.barra .container { padding-left: 20px; padding-right: 20px; }
+.logo, .navbar-brand.logo, .navbar-brand.logo:hover {
   margin: 0;
   font-size: 22px;
   line-height: 28px;
   color: var(--vino);
 }
-
-.navbar-brand.logo:hover {
-  color: var(--vino);
-}
-
-.navbar-toggler {
-  padding: 0;
-  border: none;
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
+.navbar-toggler { padding: 0; border: none; }
+.navbar-toggler:focus { box-shadow: none; }
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23722f37' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-
 .navbar-collapse {
   position: absolute;
   top: 100%;
@@ -114,11 +56,7 @@ p {
   z-index: 1030;
   background-color: var(--vino-oscuro);
 }
-
-.navbar-collapse .navbar-nav {
-  padding: 0 24px 24px;
-}
-
+.navbar-collapse .navbar-nav { padding: 0 24px 24px; }
 .navbar-collapse .navbar-nav::before {
   content: "";
   display: block;
@@ -128,70 +66,25 @@ p {
   background-color: var(--oro);
   border-radius: 2px;
 }
-
-.navbar-collapse .nav-link,
-.navbar-collapse .nav-link:hover {
+.navbar-collapse .nav-link, .navbar-collapse .nav-link:hover {
   padding: 8px 0;
   color: var(--blanco);
   font-weight: 400;
 }
-
-.navbar-collapse .nav-link.active {
-  color: var(--oro);
-}
-
-.hero,
-.hero-pagina,
-.hero-reserva {
+.navbar-collapse .nav-link.active { color: var(--oro); }
+.hero, .hero-pagina, .hero-reserva {
   background: linear-gradient(to right, #471c23, #8e4553);
   color: var(--blanco);
 }
-
-.hero {
-  padding: 40px 0;
-}
-
-.hero-pagina {
-  padding: 40px 0;
-}
-
-.hero-reserva {
-  padding: 32px 0;
-}
-
-.hero p,
-.hero-pagina p,
-.hero-reserva p {
-  color: var(--crema);
-}
-
-.hero .container > :last-child,
-.hero-pagina .container > :last-child,
-.hero-reserva .container > :last-child {
+.hero, .hero-pagina { padding: 40px 0; }
+.hero-reserva { padding: 32px 0; }
+.hero p, .hero-pagina p, .hero-reserva p { color: var(--crema); }
+.hero .container > :last-child, .hero-pagina .container > :last-child, .hero-reserva .container > :last-child {
   margin-bottom: 0;
 }
-
-.breadcrumb-hero {
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.breadcrumb-hero a {
-  color: var(--crema);
-  text-decoration: none;
-}
-
-.hero-pagina .breadcrumb-hero,
-.hero-pagina h1 {
-  margin-bottom: 8px;
-}
-
-.hero-reserva .breadcrumb-hero,
-.hero-reserva h1,
-.hero-reserva p {
-  margin-bottom: 16px;
-}
-
+.breadcrumb-hero a { color: var(--crema); text-decoration: none; }
+.hero-pagina .breadcrumb-hero, .hero-pagina h1 { margin-bottom: 8px; }
+.hero-reserva .breadcrumb-hero, .hero-reserva h1, .hero-reserva p { margin-bottom: 16px; }
 .detalle {
   width: 40px;
   height: 2px;
@@ -199,70 +92,22 @@ p {
   background-color: var(--oro);
   border-radius: 2px;
 }
-
-.guia-reserva {
-  margin: 8px 0 0;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.num-paso {
-  margin-right: 4px;
-  color: var(--oro);
-  font-weight: 600;
-}
-
+.guia-reserva { margin: 8px 0 0; }
+.num-paso { margin-right: 4px; color: var(--oro); font-weight: 600; }
 .btn {
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
   line-height: 24px;
 }
-
-.btn-oro {
-  border: none;
-  background-color: var(--oro);
-  color: var(--carbon);
-}
-
-.btn-oro:hover {
-  background-color: #b8934d;
-  color: var(--carbon);
-}
-
-.btn-vino {
-  border: none;
-  background-color: var(--vino);
-  color: var(--blanco);
-}
-
-.btn-vino:hover {
-  background-color: var(--vino-oscuro);
-  color: var(--blanco);
-}
-
-.btn-contorno {
-  border: 2px solid var(--vino);
-  background-color: transparent;
-  color: var(--vino);
-}
-
-.btn-contorno:hover {
-  background-color: var(--vino);
-  color: var(--blanco);
-}
-
-.img-carrusel {
-  height: 240px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.carousel-indicators {
-  position: static;
-  margin: 20px 0 0;
-}
-
+.btn-oro { border: none; background-color: var(--oro); color: var(--carbon); }
+.btn-oro:hover { background-color: #b8934d; color: var(--carbon); }
+.btn-vino { border: none; background-color: var(--vino); color: var(--blanco); }
+.btn-vino:hover { background-color: var(--vino-oscuro); color: var(--blanco); }
+.btn-contorno { border: 2px solid var(--vino); background-color: transparent; color: var(--vino); }
+.btn-contorno:hover, .btn-contador:hover { background-color: var(--vino); color: var(--blanco); }
+.img-carrusel { height: 240px; border-radius: 12px; object-fit: cover; }
+.carousel-indicators { position: static; margin: 20px 0 0; }
 .carousel-indicators [data-bs-target] {
   flex: none;
   width: 8px;
@@ -274,91 +119,33 @@ p {
   background-color: var(--vino);
   opacity: 0.3;
 }
-
-.carousel-indicators .active {
-  width: 24px;
-  border-radius: 4px;
-  opacity: 1;
-}
-
-.img-oferta {
+.carousel-indicators .active { width: 24px; border-radius: 4px; opacity: 1; }
+.img-oferta, .img-hotel {
   display: block;
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
 }
-
-.img-oferta-1 {
-  aspect-ratio: 3 / 2;
-  margin-bottom: 20px;
-}
-
-.img-oferta-2 {
-  aspect-ratio: 597 / 335;
-}
-
-.galeria {
-  margin-bottom: 20px;
-}
-
-.img-hotel {
-  display: block;
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.img-fachada {
-  height: 180px;
-}
-
-.img-secundaria {
-  height: 120px;
-}
-
-.pie {
-  padding: 40px 0 24px;
-  background-color: var(--vino);
-  color: var(--blanco);
-}
-
-.pie .logo {
-  margin-bottom: 24px;
-  color: var(--blanco);
-}
-
+.img-oferta-1 { aspect-ratio: 3 / 2; margin-bottom: 20px; }
+.img-oferta-2 { aspect-ratio: 597 / 335; }
+.galeria { margin-bottom: 20px; }
+.img-fachada { height: 180px; }
+.img-secundaria { height: 120px; }
+.pie { padding: 40px 0 24px; background-color: var(--vino); color: var(--blanco); }
+.pie .logo { margin-bottom: 24px; color: var(--blanco); }
 .pie address {
   margin-bottom: 24px;
   color: var(--crema);
   font-size: 14px;
   line-height: 20px;
 }
-
-.enlaces-pie {
-  margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.enlaces-pie a {
-  color: var(--blanco);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.enlaces-pie a:hover {
-  text-decoration: underline;
-}
-
-.form-label {
-  margin-bottom: 6px;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-}
-
-.form-control,
-.form-select {
+.pie address a { color: inherit; text-decoration: none; }
+.enlaces-pie { margin: 0; }
+.enlaces-pie a { color: var(--blanco); font-weight: 600; text-decoration: none; }
+.pie address a:hover, .enlaces-pie a:hover, .enlace-vino:hover { text-decoration: underline; }
+.form-label, .etiqueta-huesped { font-size: 14px; line-height: 20px; font-weight: 600; }
+.form-label { margin-bottom: 6px; }
+.form-control, .form-select {
   padding: 12px;
   border: 1px solid var(--borde);
   border-radius: 8px;
@@ -366,67 +153,30 @@ p {
   font-size: 14px;
   line-height: 24px;
 }
-
-.form-control:focus,
-.form-select:focus {
+.form-control:focus, .form-select:focus, .form-check-input:focus {
   border-color: var(--vino);
   box-shadow: 0 0 0 0.2rem rgba(114, 47, 55, 0.2);
 }
-
-.form-check-input:checked {
-  border-color: var(--vino);
-  background-color: var(--vino);
-}
-
-.obligatorio {
-  color: var(--vino);
-}
-
-.tarjeta-filtros,
-.tarjeta-estancia {
+.form-check-input:checked { border-color: var(--vino); background-color: var(--vino); }
+.obligatorio, .duracion { color: var(--vino); }
+.tarjeta-filtros, .tarjeta-estancia, .resumen-reserva, .tarjeta-confirmacion {
   padding: 20px;
   border-radius: 12px;
   background-color: var(--blanco);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
-
-.filtros {
-  padding: 24px 0;
-}
-
-.listado {
-  padding: 16px 0 48px;
-}
-
+.filtros, .seccion-estancia, .seccion-boton { padding: 24px 0; }
+.listado { padding: 16px 0 48px; }
 .tarjeta-habitacion {
   overflow: hidden;
   border: none;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
-
-.tarjeta-habitacion .card-img-top {
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.tarjeta-habitacion .card-body {
-  padding: 20px;
-}
-
-.tarjeta-habitacion h2 {
-  margin-bottom: 8px;
-  font-size: 22px;
-  line-height: 28px;
-}
-
-.tarjeta-habitacion p {
-  margin-bottom: 12px;
-  font-size: 14px;
-  line-height: 20px;
-}
-
+.tarjeta-habitacion .card-img-top { height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.tarjeta-habitacion .card-body { padding: 20px; }
+.tarjeta-habitacion h2 { margin-bottom: 8px; font-size: 22px; line-height: 28px; }
+.tarjeta-habitacion p { margin-bottom: 12px; font-size: 14px; line-height: 20px; }
 .caracteristicas {
   display: flex;
   flex-wrap: wrap;
@@ -436,7 +186,6 @@ p {
   line-height: 16px;
   color: var(--texto-suave);
 }
-
 .caracteristicas li::before {
   content: "";
   display: inline-block;
@@ -447,7 +196,6 @@ p {
   background-color: var(--oro);
   vertical-align: middle;
 }
-
 .tarjeta-habitacion .precio {
   margin-bottom: 16px;
   font-size: 16px;
@@ -455,17 +203,8 @@ p {
   font-weight: 600;
   color: var(--vino);
 }
-
-.ayuda {
-  padding: 40px 0;
-  background-color: var(--blanco);
-}
-
-.ayuda h2,
-.ayuda p {
-  margin-bottom: 16px;
-}
-
+.ayuda { padding: 40px 0; background-color: var(--blanco); }
+.ayuda h2, .ayuda p { margin-bottom: 16px; }
 .enlace-vino {
   display: inline-block;
   margin-top: 16px;
@@ -475,30 +214,13 @@ p {
   font-weight: 600;
   text-decoration: none;
 }
-
-.enlace-vino:hover {
-  text-decoration: underline;
-}
-
-.seccion-estancia {
-  padding: 24px 0;
-}
-
-.seccion-datos {
-  padding: 32px 0;
-}
-
-.seccion-boton {
-  padding: 24px 0;
-}
-
+.seccion-datos, .seccion-confirmacion { padding: 32px 0; }
 .titulo-fila {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
 }
-
 .paso {
   display: inline-flex;
   align-items: center;
@@ -511,7 +233,6 @@ p {
   color: var(--blanco);
   font-weight: 600;
 }
-
 .titulo-seccion {
   margin: 0;
   font-family: 'Playfair Display', serif;
@@ -520,35 +241,10 @@ p {
   line-height: 36px;
   color: var(--vino);
 }
-
-.tarjeta-estancia > * {
-  margin-bottom: 20px;
-}
-
-.tarjeta-estancia > :last-child {
-  margin-bottom: 0;
-}
-
-.duracion {
-  color: var(--vino);
-}
-
-.fila-huesped {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.fila-huesped p {
-  margin: 0;
-}
-
-.etiqueta-huesped {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-}
-
+.tarjeta-estancia > * { margin-bottom: 20px; }
+.tarjeta-estancia > :last-child { margin-bottom: 0; }
+.fila-huesped { display: flex; align-items: center; justify-content: space-between; }
+.fila-huesped p { margin: 0; }
 .btn-contador {
   width: 32px;
   height: 32px;
@@ -560,12 +256,6 @@ p {
   font-weight: 600;
   line-height: 1;
 }
-
-.btn-contador:hover {
-  background-color: var(--vino);
-  color: var(--blanco);
-}
-
 .contador input {
   width: 16px;
   padding: 0;
@@ -575,64 +265,14 @@ p {
   font-weight: 600;
   color: var(--carbon);
 }
-
-.contador input:focus {
-  outline: none;
-}
-
-.campo {
-  margin-bottom: 20px;
-}
-
-
-/* ==========================================================================
-   AÑADIDOS: enlaces, filtros, paso 2 de reservas y confirmación
-   ========================================================================== */
-
-.pie address a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.pie address a:hover {
-  text-decoration: underline;
-}
-
-/* Las imágenes de ofertas son enlaces sin alterar su maquetación */
-.enlace-oferta {
-  display: contents;
-}
-
-.enlace-oferta:focus-visible .img-oferta {
-  outline: 3px solid var(--oro);
-  outline-offset: 3px;
-}
-
-.sin-resultados {
-  margin: 24px 0 0;
-  text-align: center;
-}
-
-.form-check-input:focus {
-  border-color: var(--vino);
-  box-shadow: 0 0 0 0.2rem rgba(114, 47, 55, 0.2);
-}
-
-.aviso-error {
-  color: #b3261e;
-  font-weight: 600;
-}
-
-.seccion-habitacion {
-  padding: 8px 0 24px;
-}
-
-.opciones-habitacion {
-  display: grid;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
+.contador input:focus { outline: none; }
+.campo { margin-bottom: 20px; }
+.enlace-oferta { display: contents; }
+.enlace-oferta:focus-visible .img-oferta { outline: 3px solid var(--oro); outline-offset: 3px; }
+.sin-resultados { margin: 24px 0 0; text-align: center; }
+.aviso-error { color: #b3261e; font-weight: 600; }
+.seccion-habitacion { padding: 8px 0 24px; }
+.opciones-habitacion { display: grid; gap: 12px; margin-bottom: 20px; }
 .opcion-habitacion {
   display: flex;
   align-items: center;
@@ -644,77 +284,28 @@ p {
   background-color: var(--blanco);
   cursor: pointer;
 }
-
-.opcion-habitacion:hover,
-.opcion-habitacion:has(input:checked) {
-  border-color: var(--vino);
-}
-
-.opcion-habitacion:has(input:checked) {
-  box-shadow: 0 0 0 1px var(--vino);
-}
-
-.opcion-habitacion .form-check-input {
-  flex-shrink: 0;
-  margin: 0;
-}
-
-.opcion-texto {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-.opcion-nombre {
-  font-weight: 600;
-}
-
+.opcion-habitacion:hover, .opcion-habitacion:has(input:checked) { border-color: var(--vino); }
+.opcion-habitacion:has(input:checked) { box-shadow: 0 0 0 1px var(--vino); }
+.opcion-habitacion .form-check-input { flex-shrink: 0; margin: 0; }
+.opcion-texto { display: flex; flex: 1; flex-direction: column; }
+.opcion-nombre { font-weight: 600; }
 .opcion-precio {
   color: var(--vino);
   font-weight: 600;
   text-align: right;
   white-space: nowrap;
 }
-
 .opcion-precio small {
   display: block;
   color: var(--texto-suave);
   font-size: 12px;
   font-weight: 400;
 }
-
-.resumen-reserva {
-  padding: 16px;
-  border-radius: 12px;
-  background-color: var(--blanco);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  color: var(--vino);
-  font-weight: 600;
-}
-
-.enlace-ver {
-  margin-bottom: 0;
-}
-
-.enlace-ver .enlace-vino {
-  margin-top: 0;
-}
-
-.seccion-confirmacion {
-  padding: 32px 0;
-}
-
-.tarjeta-confirmacion {
-  padding: 24px;
-  border-radius: 12px;
-  background-color: var(--blanco);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-.tarjeta-confirmacion:focus {
-  outline: none;
-}
-
+.resumen-reserva { padding: 16px; color: var(--vino); font-weight: 600; }
+.enlace-ver { margin-bottom: 0; }
+.enlace-ver .enlace-vino { margin-top: 0; }
+.tarjeta-confirmacion { padding: 24px; }
+.tarjeta-confirmacion:focus { outline: none; }
 .icono-ok {
   display: flex;
   align-items: center;
@@ -728,13 +319,7 @@ p {
   font-size: 24px;
   font-weight: 600;
 }
-
-.lista-confirmacion {
-  margin: 0 0 20px;
-  padding: 0;
-  list-style: none;
-}
-
+.lista-confirmacion { margin: 0 0 20px; padding: 0; list-style: none; }
 .lista-confirmacion li {
   display: flex;
   justify-content: space-between;
@@ -744,99 +329,28 @@ p {
   font-size: 14px;
   line-height: 20px;
 }
+.lista-confirmacion li span:first-child { color: var(--texto-suave); }
+.lista-confirmacion li span:last-child { font-weight: 600; text-align: right; }
+input[type="date"] { min-width: 0; }
 
-.lista-confirmacion li span:first-child {
-  color: var(--texto-suave);
-}
-
-.lista-confirmacion li span:last-child {
-  font-weight: 600;
-  text-align: right;
-}
-
-
-/* ==========================================================================
-   RESPONSIVE
-   Diseño base = móvil (402px). Todo lo de abajo se añade con min-width
-   (mobile-first) sin alterar las reglas anteriores.
-   Breakpoints: 403px (móvil grande) · 768px (tablet) · 992px (escritorio) · 1200px (escritorio grande)
-   ========================================================================== */
-
-/* ---------- Móviles muy estrechos (≤ 359px) ---------- */
 @media (max-width: 359.98px) {
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  h2 {
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .titulo-seccion {
-    font-size: 22px;
-    line-height: 32px;
-  }
-
-  .tarjeta-filtros,
-  .tarjeta-estancia {
-    padding: 16px;
-  }
+  .container { padding-left: 16px; padding-right: 16px; }
+  h1 { font-size: 28px; line-height: 36px; }
+  h2 { font-size: 24px; line-height: 32px; }
+  .titulo-seccion { font-size: 22px; line-height: 32px; }
+  .tarjeta-filtros, .tarjeta-estancia { padding: 16px; }
 }
 
-/* Evita que los input date desborden su columna en iOS/Safari */
-input[type="date"] {
-  min-width: 0;
-}
-
-/* ---------- Móvil grande (≥ 403px): la página deja de ser una columna fija ---------- */
 @media (min-width: 403px) {
-  .pagina {
-    max-width: none;
-    box-shadow: none;
-  }
+  .pagina { max-width: none; box-shadow: none; }
 }
 
-/* ---------- Tablet (≥ 768px) ---------- */
 @media (min-width: 768px) {
-  /* Tipografía */
-  h1 {
-    font-size: 44px;
-    line-height: 52px;
-  }
-
-  h2 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  .titulo-seccion {
-    font-size: 26px;
-    line-height: 36px;
-  }
-
-  /* Contenedor */
-  .container {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  .barra .container {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  /* --- Barra de navegación: menú en línea, sin hamburguesa --- */
-  .navbar-toggler {
-    display: none;
-  }
-
+  h1 { font-size: 44px; line-height: 52px; }
+  h2 { font-size: 32px; line-height: 40px; }
+  .titulo-seccion { font-size: 26px; line-height: 36px; }
+  .container, .barra .container { padding-left: 32px; padding-right: 32px; }
+  .navbar-toggler { display: none; }
   .barra .navbar-collapse {
     position: static;
     display: block !important;
@@ -845,202 +359,59 @@ input[type="date"] {
     width: auto;
     background-color: transparent;
   }
-
-  .navbar-collapse .navbar-nav {
-    flex-direction: row;
-    gap: 4px 28px;
-    padding: 0;
-  }
-
-  .navbar-collapse .navbar-nav::before {
-    display: none;
-  }
-
-  .navbar-collapse .nav-link,
-  .navbar-collapse .nav-link:hover {
+  .navbar-collapse .navbar-nav { flex-direction: row; gap: 4px 28px; padding: 0; }
+  .navbar-collapse .navbar-nav::before { display: none; }
+  .navbar-collapse .nav-link, .navbar-collapse .nav-link:hover {
     padding: 6px 0;
     border-bottom: 2px solid transparent;
     color: var(--carbon);
   }
-
-  .navbar-collapse .nav-link:hover {
-    color: var(--vino);
-  }
-
+  .navbar-collapse .nav-link:hover { color: var(--vino); }
   .navbar-collapse .nav-link.active {
     border-bottom-color: var(--oro);
     color: var(--vino);
     font-weight: 600;
   }
-
-  /* --- Heros --- */
-  .hero {
-    padding: 72px 0;
-  }
-
-  .hero-pagina {
-    padding: 56px 0;
-  }
-
-  .hero-reserva {
-    padding: 48px 0;
-  }
-
-  .hero p,
-  .hero-pagina p,
-  .hero-reserva p {
-    max-width: 560px;
-  }
-
-  .hero .d-grid {
+  .hero { padding: 72px 0; }
+  .hero-pagina { padding: 56px 0; }
+  .hero-reserva { padding: 48px 0; }
+  .hero p, .hero-pagina p, .hero-reserva p, .ayuda p { max-width: 560px; }
+  .hero .d-grid, .ayuda .d-grid, main > section.bg-white .d-grid, .seccion-boton .container.d-grid {
     grid-template-columns: max-content;
   }
-
-  /* --- Botones de ancho completo pasan a ancho automático --- */
-  .ayuda .d-grid,
-  main > section.bg-white .d-grid {
-    grid-template-columns: max-content;
-  }
-
-  /* --- Inicio: carrusel --- */
-  .img-carrusel {
-    height: 360px;
-  }
-
-  /* --- Inicio: ofertas en dos columnas --- */
-  #ofertas .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 24px;
-  }
-
-  #ofertas .container > h2,
-  #ofertas .container > p {
-    grid-column: 1 / -1;
-  }
-
-  #ofertas .img-oferta {
-    height: 100%;
-    aspect-ratio: 3 / 2;
-    margin-bottom: 0;
-  }
-
-  /* --- Inicio: sobre el hotel --- */
-  main > section.bg-white .container > p {
-    max-width: 640px;
-  }
-
-  .galeria .col-12 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
-
-  .galeria .col-6 {
-    width: 25%;
-  }
-
-  .img-fachada,
-  .img-secundaria {
-    height: 220px;
-  }
-
-  /* --- Habitaciones: filtros en una sola fila --- */
-  .tarjeta-filtros {
-    padding: 24px;
-  }
-
-  .tarjeta-filtros .row {
-    flex-wrap: nowrap;
-    align-items: flex-end;
-  }
-
-  .tarjeta-filtros .row > * {
-    flex: 1 1 0;
-    width: auto;
-    min-width: 0;
-  }
-
-  .tarjeta-filtros .row > .pt-2 {
-    padding-top: 0 !important;
-  }
-
-  /* --- Habitaciones: rejilla de 2 columnas --- */
-  .listado {
-    padding: 24px 0 64px;
-  }
-
-  .listado .row > .col-12 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
-
-  .tarjeta-habitacion {
-    height: 100%;
-  }
-
-  .tarjeta-habitacion .card-body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .tarjeta-habitacion .card-body .d-grid {
-    margin-top: auto;
-  }
-
-  /* --- Ayuda --- */
-  .ayuda {
-    padding: 56px 0;
-  }
-
-  .ayuda p {
-    max-width: 560px;
-  }
-
-  /* --- Reservas: formulario alineado con el resto y datos en dos columnas --- */
-  .tarjeta-estancia {
+  .img-carrusel { height: 360px; }
+  #ofertas .container { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+  #ofertas .container > h2, #ofertas .container > p { grid-column: 1 / -1; }
+  #ofertas .img-oferta { height: 100%; aspect-ratio: 3 / 2; margin-bottom: 0; }
+  main > section.bg-white .container > p { max-width: 640px; }
+  .galeria .col-12 { flex: 0 0 auto; width: 50%; }
+  .galeria .col-6 { width: 25%; }
+  .img-fachada, .img-secundaria { height: 220px; }
+  .tarjeta-filtros { padding: 24px; }
+  .tarjeta-filtros .row { flex-wrap: nowrap; align-items: flex-end; }
+  .tarjeta-filtros .row > * { flex: 1 1 0; width: auto; min-width: 0; }
+  .tarjeta-filtros .row > .pt-2 { padding-top: 0 !important; }
+  .listado { padding: 24px 0 64px; }
+  .listado .row > .col-12 { flex: 0 0 auto; width: 50%; }
+  .tarjeta-habitacion { height: 100%; }
+  .tarjeta-habitacion .card-body { display: flex; flex-direction: column; }
+  .tarjeta-habitacion .card-body .d-grid { margin-top: auto; }
+  .ayuda { padding: 56px 0; }
+  .tarjeta-estancia, .opciones-habitacion, .resumen-reserva, .tarjeta-confirmacion {
     max-width: 760px;
-    padding: 28px;
   }
-
+  .tarjeta-estancia, .tarjeta-confirmacion { padding: 28px; }
   .seccion-datos .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 368px));
     column-gap: 24px;
   }
-
-  .seccion-datos .container > :not(.campo) {
+  .seccion-datos .container > :not(.campo), .seccion-datos .container > .campo:has(textarea) {
     grid-column: 1 / -1;
     max-width: 760px;
   }
-
-  .seccion-datos .container > .campo:has(textarea) {
-    grid-column: 1 / -1;
-    max-width: 760px;
-  }
-
-  .seccion-boton .container.d-grid {
-    grid-template-columns: max-content;
-  }
-
-  .opciones-habitacion,
-  .resumen-reserva,
-  .tarjeta-confirmacion {
-    max-width: 760px;
-  }
-
-  .tarjeta-confirmacion {
-    padding: 28px;
-  }
-
-  .tarjeta-confirmacion .d-grid {
-    grid-template-columns: max-content max-content;
-  }
-
-  /* --- Pie en una sola fila --- */
-  .pie {
-    padding: 48px 0 40px;
-  }
-
+  .tarjeta-confirmacion .d-grid { grid-template-columns: max-content max-content; }
+  .pie { padding: 48px 0 40px; }
   .pie .container {
     display: flex;
     flex-wrap: wrap;
@@ -1048,64 +419,22 @@ input[type="date"] {
     justify-content: space-between;
     gap: 24px 48px;
   }
-
-  .pie .logo,
-  .pie address {
-    margin-bottom: 0;
-  }
+  .pie .logo, .pie address { margin-bottom: 0; }
 }
 
-/* ---------- Escritorio (≥ 992px) ---------- */
 @media (min-width: 992px) {
-  h1 {
-    font-size: 52px;
-    line-height: 60px;
-  }
-
-  h2 {
-    font-size: 36px;
-    line-height: 44px;
-  }
-
-  .hero {
-    padding: 96px 0;
-  }
-
-  .hero-pagina {
-    padding: 64px 0;
-  }
-
-  .hero-reserva {
-    padding: 56px 0;
-  }
-
-  .hero p {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  .img-carrusel {
-    height: 460px;
-  }
-
-  .img-fachada,
-  .img-secundaria {
-    height: 260px;
-  }
-
-  .listado .row > .col-12 {
-    width: 33.33333333%;
-  }
+  h1 { font-size: 52px; line-height: 60px; }
+  h2 { font-size: 36px; line-height: 44px; }
+  .hero { padding: 96px 0; }
+  .hero-pagina { padding: 64px 0; }
+  .hero-reserva { padding: 56px 0; }
+  .hero p { font-size: 18px; line-height: 28px; }
+  .img-carrusel { height: 460px; }
+  .img-fachada, .img-secundaria { height: 260px; }
+  .listado .row > .col-12 { width: 33.33333333%; }
 }
-
 
 @media (min-width: 1200px) {
-  .img-carrusel {
-    height: 520px;
-  }
-
-  .img-fachada,
-  .img-secundaria {
-    height: 300px;
-  }
+  .img-carrusel { height: 520px; }
+  .img-fachada, .img-secundaria { height: 300px; }
 }
